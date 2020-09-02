@@ -1,0 +1,21 @@
+package com.yunusen.springcloud.alibaba.dao;
+
+import com.yunusen.springcloud.alibaba.domain.Order;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+/**
+ * @author yunusen
+ * @version 1.0
+ * @date 2020/8/29 2:20
+ */
+@Mapper
+public interface OrderDao {
+
+    // 1.新建订单
+    void create(Order order);
+
+    // 2.修改订单状态，从0改为1
+    void update(@Param("userId") Long userId, @Param("status") Integer status);
+
+}
